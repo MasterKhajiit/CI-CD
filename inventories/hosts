@@ -1,0 +1,6 @@
+[VM]
+VM ansible_host=192.168.4.117
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=sadmin
