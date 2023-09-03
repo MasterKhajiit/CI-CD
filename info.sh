@@ -3,29 +3,28 @@
 mkdir html
 
 date > html/index.html
-echo -e
 
 #show kernel data
-echo "-------------------- Hostname info --------------------" >> html/index.html
+echo -e "-------------------- Hostname info --------------------" >> html/index.html
 hostnamectl >> html/index.html
 
 #show ip data
-echo "-------------------- Ip info --------------------" >> html/index.html
+echo -e "-------------------- Ip info --------------------" >> html/index.html
 ip a >> html/index.html
 
 #show CPU info
-echo "-------------------- Processor info --------------------" >> html/index.html
+echo -e "-------------------- Processor info --------------------" >> html/index.html
 cat /proc/cpuinfo >> html/index.html 
 
 #show memory usage
-echo "-------------------- RAM info --------------------" >> html/index.html
+echo -e "-------------------- RAM info --------------------" >> html/index.html
 free -m >> html/index.html
 
 #show hard drive data
-echo "-------------------- HDD info --------------------" >> html/index.html
+echo -e "-------------------- HDD info --------------------" >> html/index.html
 df -h >> html/index.html
 
 #show PCI Devices
-echo "-------------------- PCI info --------------------" >> html/index.html
+echo -e "-------------------- PCI info --------------------" >> html/index.html
 lspci >> html/index.html
 
