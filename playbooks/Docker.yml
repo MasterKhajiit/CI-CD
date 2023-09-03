@@ -4,36 +4,36 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
   tasks:
-    - name: “Install python3”
-      apt:
-        update_cache: true
-        name: python3
-        state: present
-    - name: “Install python3-pip”
-      apt:
-        update_cache: true
-        name: python3-pip
-        state: present
-    - name: “Install python3-setuptools”
-      apt:
-        update_cache: true
-        name: python3-setuptools
-        state: present
-    - name: “Install selinux-python3”
-      apt:
-        update_cache: true
-        name: python3-selinux
-        state: present
+    # - name: “Install python3”
+    #   apt:
+    #     update_cache: true
+    #     name: python3
+    #     state: present
+    # - name: “Install python3-pip”
+    #   apt:
+    #     update_cache: true
+    #     name: python3-pip
+    #     state: present
+    # - name: “Install python3-setuptools”
+    #   apt:
+    #     update_cache: true
+    #     name: python3-setuptools
+    #     state: present
+    # - name: “Install selinux-python3”
+    #   apt:
+    #     update_cache: true
+    #     name: python3-selinux
+    #     state: present
 
-    - name: “Install PIP SIX”
-      pip:
-        name: six
-    - name: “Install PIP docker”
-      pip:
-        name: docker
-    - name: “Install requests sdk”
-      pip:
-        name: requests
+    # - name: “Install PIP SIX”
+    #   pip:
+    #     name: six
+    # - name: “Install PIP docker”
+    #   pip:
+    #     name: docker
+    # - name: “Install requests sdk”
+    #   pip:
+    #     name: requests
 
     - name: "Start Docker Service"
       service:
@@ -48,17 +48,17 @@
         group: root
         mode: 666
     
-    # - name: copy nginx config
-    #   copy:
-    #     src: /Users/admin/Documents/WORK/DEV OPS/Diplom/docker/nginx/conf/nginx.conf
-    #     dest: /home/sadmin/script/html/nginx/
-    #     owner: sadmin
-    #     group: sadmin
-    #     mode: 666
+    - name: copy nginx config
+      copy:
+        src: /Users/admin/Documents/WORK/DEV OPS/Diplom/docker/nginx/nginx.conf
+        dest: /home/sadmin/script/html/nginx/
+        owner: sadmin
+        group: sadmin
+        mode: 666
 
     - name: build container image
       docker_image:
-        name: "nginx_container:latest"
+        name: "ubuntu_nginx:latest"
         source: build
         build:
           dockerfile: ./Dockerfile
@@ -68,7 +68,7 @@
     - name: run container
       docker_container:
         name: "testdata"
-        image: nginx_container:latest
+        image: ubuntu_nginx:latest
         auto_remove: yes
         detach: yes
         state: started
