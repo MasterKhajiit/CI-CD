@@ -3,7 +3,7 @@
 mkdir html
 
 date > html/index.html
-
+echo -e
 
 #show kernel data
 echo "-------------------- Hostname info --------------------" >> html/index.html
