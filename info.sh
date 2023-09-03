@@ -5,7 +5,7 @@ mkdir html
 date > html/index.html
 
 #show kernel data
-echo -e "\n-------------------- Hostname info --------------------\n" >> html/index.html
+echo -en "\n-------------------- Hostname info --------------------\n" >> html/index.html
 hostnamectl >> html/index.html
 
 #show ip data
