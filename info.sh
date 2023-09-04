@@ -27,5 +27,3 @@ df -h >> html/index.html
 #show PCI Devices
 echo "-------------------- PCI info --------------------" >> html/index.html
 lspci >> html/index.html
-
-#
