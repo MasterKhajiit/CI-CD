@@ -28,3 +28,4 @@ df -h >> html/index.html
 echo "-------------------- PCI info --------------------" >> html/index.html
 lspci >> html/index.html
 
+#
