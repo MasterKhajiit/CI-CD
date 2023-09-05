@@ -27,5 +27,3 @@ df -h >> html/index.html
 #show PCI Devices
 echo "<h2>-------------------- PCI info --------------------</h2>" >> html/index.html
 lspci >> html/index.html
-
-#test webhook
