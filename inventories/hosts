@@ -1,6 +1,5 @@
 [VM]
-#VM ansible_host=192.168.1.106
-VM ansible_host=192.168.4.116
+VM ansible_host=192.168.1.106
 
 [all:vars]
 ansible_connection=ssh

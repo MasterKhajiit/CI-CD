@@ -1,24 +1,8 @@
 ---
-- name: Deploying Docker
-  hosts: "VM"
-  become: true
-  tasks:
-    - name: Installing Docker
-      apt: 
-        state: "present"        
-        name: "docker"
-        update_cache: true
-    
-    - name: Ensure docker deamon is running
-      become: true      
-      service:
-        name: docker
-        state: started
-
-- name: Deploying the script
+- name: "Deploying the script"
   hosts: "VM"
   tasks:
-    - name: Copying script
+    - name: "Copying script"
       copy:
         src: ../info.sh
         dest: ~/script/
@@ -26,7 +10,7 @@
         group: "sadmin"
         mode: '0755'
 
-    - name: Executing script
+    - name: "Executing script"
       become: true
       script: 
         chdir: /home/sadmin/script
